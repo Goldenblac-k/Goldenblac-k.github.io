@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="around"></div>
+        <div class="centre">
+            <header id="header">
+                <div class="textHidden"></div>
+                <nav>
+                    <div class="left"><h2 onclick="scroll_to('header')">Accueil</h2></div>
+                    <div><h2 onclick="scroll_to('middle')">Je suis</h2></div>
+                    <div><h2 onclick="scroll_to('down')">Galerie</h2></div>
+                    <div class="right"><h2 onclick="scroll_to('footer')">Contact</h2></div>
+                </nav>
+            </header>
+
+            <div>
+                <div id="up">
+                    <h1>
+                        Bienvenue sur le ϵ-portfolio de
+                    </h1>
+
+                    <h1 id="nom">Joan Guilbert</h1>
+                    <h2>Étudiant en BUT Informatique</h2>
+                </div>
+
+                <div id="middle">
+                    <div class="subtitle">
+                        <h1>Qui je suis :</h1>
+                    </div>
+
+                    <div class="grille">
+                        <div class="lig1">
+                            <p class="left">Je m'appelle Joan GUILBERT, j'ai 19 ans et je suis actuellement étudiant en première année de BUT Informatique.</p>
+                            <p>Je suis détenteur d'un BAC général avec spécialités Numériques et Sciences de l'Informatique<br>et Mathématiques.</p>
+                            <p>Je suis assez polyvalent en terme de langages de programmation, avec une maîtrise moyenne de ceux que je connais et une bonne adaptabilité avec ceux que je ne connais pas.</p>
+                            <p class="right">J'ai aussi des notions d'ingénieurie grâce à ma troisième spécialité de lycée Sciences de l'Ingénieur.</p>
+                        </div>
+
+                        <div class="lig2">
+                            <p class="left">J'aurais pu devenir professeur, psychologue ou encore mécanicien, mais j'ai choisi la voie de l'Informatique, mon cerveau étant façonné pour la logique brut.</p>
+                            <p>Je suis du genre à ne pas pouvoir me contenter d'une tâche passive, il faut toujours que je trouve le moyen de stimuler mon cerveau, et la plupart du temps je me retrouve à faire des jeux de logiques en parallèle comme le Sudoku, le Solitaire ou le Démineur.</p>
+                            <p>Ma nature curieuse me pousse à toucher beaucoup de domaines : je programme, je fais de la modélisation 3D, je démonte et remonte des objets, et je m'intéresse à la musique étant audiophile.</p>
+                            <p class="right">Je me décrirais comme une personne bienveillante et agréable à vivre qui sait se montrer bourreau de travail quand il le faut, mais qui a tendance à se montrer trop perfectionniste sur les projets de grande ampleur.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="cv">
+                        <h2>Si mon profil vous intéresse, <a href="GUILBERTJoan.pdf">voici mon CV</a>.</h2>
+                    </div>
+                </div>
+
+                <div id="down">
+                    <div>
+                        <div class="subtitle">
+                            <h1>Un échantillon de mes projets :</h1>
+                        </div>
+                        <div id="github">
+                            <p><a href="https://github.com/Goldenblac-k">Voir toute ma galerie</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="carrousel">
+                        <div class="arrows">
+                            <div class="fondLeft">◀</div>
+                            <div onclick="swipProject('left')" id="swipLeft">◁</div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="imageBloc">
+                                <img class="imagesProjet" src="../truc.png" alt="">
+                                <div>
+                                    <div onclick="switchImage('left')">⪻</div>
+                                    <div onclick="switchImage('right')">⪼</div>
+                                </div>
+                            </div>
+
+                            <div class="textBloc">
+                                <div>
+                                    <h2 class="titre">
+                                        none
+                                    </h2>
+
+                                    <h3 class="desc">
+                                        none
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="arrows">
+                            <div class="fondRight">▶</div>
+                            <div onclick="swipProject('right')" id="swipRight">▷</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer">
+                <div>
+                    <div>
+                        <h2>Mes contacts :</h2>
+
+                        <div class="contacts">
+                            <h3>⪧ <span id="mail">joan.guilbert@etu.unicaen.fr</span></h3>
+                            <h3>⪧ <a href="https://www.linkedin.com/in/joan-guilbert-086896409">Mon lien linkedin</a></h3>
+                        </div>
+
+                        <h2>Pensé, designé et développé par Joan GUILBERT</h2>
+                        <h2>© Copyright ⁞ 2026</h2>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="around"></div>
+
+        <script src="script.js"></script>
+        <script>setContainer()</script>
+    </body>
+
+    
+</html>

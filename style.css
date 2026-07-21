@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: black;
+    font-weight: 1;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+html {
+    background-color: rgb(37, 37, 37);
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr min(95%, 1200px) 1fr;
+    grid-template-rows: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body > .centre {
+    display: flex;
+    flex-direction: column;
+    min-width: 610px;
+    z-index: 1;
+    background-color: #fad0d0;
+    align-items: center;
+}
+
+.around {
+    position: relative;
+    z-index: 10;
+    background-color: white;
+}
+
+.subtitle {
+    margin: 30px 30px;
+}
+
+/* -- HEADER -- */
+
+header {
+    width: 100%;
+    height: 105px;
+    background-color: #F9DFDF;
+    transition: filter 2s ease-in-out;
+}
+
+.textHidden {
+    position: absolute;
+    width: 20px;
+    height: 105px;
+    z-index: 10;
+    background-color: #F9DFDF;
+}
+
+nav {
+    display: flex;
+    margin: 21px;
+    height: max-content;
+    background-color: #F5AFAF;
+    border-radius: 20px;
+    justify-content: space-between;
+}
+
+nav > div {
+    display: flex;
+    font-size: 200%;
+    width: 25%;
+    margin: 0px 3px;
+    padding: 5px 0px;
+    background-color: #F9DFDF;
+    border-radius: 15px;
+    justify-content: center;
+    transform: translateX(-410%);
+    transition: transform 2s ease-in-out;
+}
+
+nav > .left {
+    margin-left: 0;
+}
+
+nav > .right {
+    margin-right: 0;
+}
+
+nav h2 {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+nav h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    background-color: black; 
+    transition: width 0.3s ease-in-out;
+}
+
+nav h2:hover::after {
+    width: 90%;
+}
+
+/* -- CENTER -- */
+
+.centre > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    background-color: #F5AFAF;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* -- TOP -- */
+
+#up {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 500px;
+    height: max-content;
+    margin-bottom: 2px;
+    flex: auto;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #FBEFEF;
+    text-align: center;
+}
+
+#up > h1 {
+    margin-top: 50px;
+    font-size: 200%;
+}
+
+#up > #nom {
+    font-size: 500%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#up > h2 {
+    font-size: 300%;
+}
+
+/* -- MIDDLE -- */
+
+#middle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 500px;
+    height: max-content;
+    flex: auto;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border-radius: 50px;
+    background-color: #FCF8F8;
+}
+
+.grille {
+    display: grid;
+    flex: 1;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid #F5AFAF;
+    border-left: none;
+    border-right: none;
+}
+
+.grille > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.grille p {
+    font-size: 90%;
+    align-content: center;
+    padding: 5px;
+    border: 1px solid #F5AFAF;
+}
+
+.grille p.left {
+    border-left: none;
+}
+
+.grille p.right {
+    border-right: none;
+}
+
+.hider {
+    background-color: #faaeae;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hider:hover {
+    opacity: 0;
+}
+
+#cv {
+    display: grid;
+    width: 100%;
+    height: max-content;
+    margin: 30px 0px;
+    justify-items: center;
+}
+
+#cv h2 {
+    font-size: 120%;
+}
+
+/* -- BOTTOM -- */
+
+#down {
+    display: block;
+    min-height: 500px;
+    height: max-content;
+    margin-top: 2px;
+    flex: auto;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #FBEFEF;
+    align-content: center;
+    justify-items: center;
+}
+
+#down > div {
+    display: flex;
+    align-items: center;
+}
+
+#github {
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+    margin-right: 40px;
+    justify-content: right;
+}
+
+#github > p {
+    cursor: pointer;
+    text-decoration: underline;
+    right: 30px;
+}
+
+.carrousel {
+    display: flex;
+    height: 75%;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 2s ease-in-out;
+}
+
+.arrows {
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+#swipLeft, #swipRight {
+    position: sticky;
+    color: #faaeae;
+    display: flex;
+    z-index: 5;
+    font-size: 500%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fondLeft, .fondRight {
+    position: absolute;
+    color: #FBEFEF;
+    display: flex;
+    z-index: 1;
+    font-size: 450%;
+    justify-content: center;
+}
+
+.container {
+    position: sticky;
+    display: flex;
+    width: 55%;
+    height: 90%;
+    z-index: 1;
+    background-color: #fbb8b8;
+    border: 3px solid #faaeae;
+    border-radius: 0px 30px;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.imageBloc > img {
+    flex: 1;
+    width: 99%;
+    height: 99%;
+    background-color: rgba(0, 0, 0, 0.055);
+    object-fit: contain;
+}
+
+.imageBloc > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imageBloc > div > div {
+    display: flex;
+    cursor: pointer;
+    font-size: 300%;
+    color: #F9DFDF;
+}
+
+.textBloc {
+    display: flex;
+    border-left: 3px solid #faaeae;
+}
+
+.textBloc > div {
+    margin: 15px;
+    flex: 1;
+}
+
+.textBloc h3 {
+    margin-top: 15px;
+    font-size: 100%;
+}
+
+/* -- FOOTER -- */
+
+footer {
+    overflow-y: hidden;
+}
+
+footer > div {
+    display: flex;
+    position: sticky;
+    width: max-content;
+    height: 200px;
+    bottom: 0;
+    padding: 30px;
+    margin: 10px 10px 0px 10px;
+    background-color: #F9DFDF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(110%);
+    transition: 2s ease-in-out;
+}
+
+footer > div > div {
+    display: grid;
+    width: max-content;
+    height: max-content;
+    color: white;
+    text-align: center;
+    text-wrap-mode: nowrap;
+    justify-items: center;
+}
+
+footer .contacts {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 90%;
+    text-align: left;
+}
+
+footer #mail {
+    user-select: text;
+}
