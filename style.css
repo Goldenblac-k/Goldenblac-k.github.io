@@ -327,13 +327,6 @@ nav h2:hover::after {
     border-radius: 0px 30px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        flex-direction: column-reverse;
-        height: 600px;
-    }    
-}
-
 .container > div {
     display: flex;
     flex-direction: column;
@@ -363,6 +356,18 @@ nav h2:hover::after {
 .textBloc {
     display: flex;
     border-left: 3px solid #faaeae;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column-reverse;
+        height: 600px;
+    }
+
+    .textBloc {
+        border-left: none;
+        border-bottom: 3px solid #faaeae;
+    }
 }
 
 .textBloc > div {
