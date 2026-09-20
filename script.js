@@ -1,4 +1,5 @@
 const nav = document.querySelector('nav');
+const textHidden = document.querySelector('.textHidden')
 const grille = document.getElementsByClassName("grille")[0]
 const swipL = document.getElementById('swipLeft');
 const swipR = document.getElementById('swipRight');
@@ -9,14 +10,16 @@ const desc = document.getElementsByClassName('desc')[0];
 const footer = document.querySelector('footer div');
 const contact = footer.getElementsByClassName('contacts')[0]
 
-contact.style.paddingLeft = footer
+contact.style.paddingLeft = "0px"
+
+textHidden.style.height = nav.parentNode.clientHeight + "px"
 
 const Container = document.createElement('div');
 Container.className = 'container';
 Container.style.position = 'absolute';
 Container.innerHTML = `
     <div class="imageBloc">
-        <img class="imagesProjet" src="../truc.png" alt="">
+        <img class="imagesProjet" src="" alt="">
         <div>
             <div class="prev">⪻</div>
             <div class="next">⪼</div>
@@ -41,17 +44,17 @@ Grille.className = "grille";
 Grille.style.position = "absolute";
 Grille.innerHTML = `
     <div id="lig1">
-        <p class="left hider"></p>
-        <p class="hider"></p>
-        <p class="hider"></p>
-        <p class="right hider"></p>
+        <p class="left hidder"></p>
+        <p class="hidder"></p>
+        <p class="hidder"></p>
+        <p class="right hidder"></p>
     </div>
 
     <div id="lig2">
-        <p class="left hider"></p>
-        <p class="hider"></p>
-        <p class="hider"></p>
-        <p class="right hider"></p>
+        <p class="left hidder"></p>
+        <p class="hidder"></p>
+        <p class="hidder"></p>
+        <p class="right hidder"></p>
     </div>
 `;
 
@@ -72,11 +75,7 @@ function resizeGrille(){
     Grille.style.top = grille.offsetTop+"px";
 }
 
-window.addEventListener('resize', () => {
-    resizeGrille()
-})
-
-resizeGrille()
+window.addEventListener('resize', resizeGrille)
 
 const projets = [
     {'titre': 'Mimesis', 'desc': "Mimesis est un jeu à choix narratifs en 2D dans lequel vous incarnez un testeur de sécurité qui a été embauché par le directeur du musée Mimesis afin de dérober une oeuvre et ainsi exposer les différentes failles de sécurité du lieu.", 'img': ['mimesis_main.png', 'mimesis_in_game.png', 'mimesis_end.png']},
@@ -182,7 +181,6 @@ function switchImage(dir) {
 }
 
 function scroll_to(targetId, duration = 1000) {
-    console.log(targetId)
     const target = document.getElementById(targetId);
 
     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
@@ -217,4 +215,7 @@ function scroll_to(targetId, duration = 1000) {
     requestAnimationFrame(animation);
 }
 
-window.addEventListener('load', navBarre);
+window.addEventListener('load', () => {
+    navBarre()
+    resizeGrille()
+});
