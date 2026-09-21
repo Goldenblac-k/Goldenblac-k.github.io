@@ -59,7 +59,7 @@ Grille.innerHTML = `
 `;
 
 const Grille_p = Grille.querySelectorAll('p');
-for (i = 0; i < Grille_p.length; i++){
+for (let i = 0; i < Grille_p.length; i++){
     if (i%3 == 0) Grille_p[i].style.backgroundColor = "#faaeae";
     if (i%3 == 1) Grille_p[i].style.backgroundColor = "#f3b9b9";
     if (i%3 == 2) Grille_p[i].style.backgroundColor = "#f1c5c5";
