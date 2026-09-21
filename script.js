@@ -131,36 +131,47 @@ function swipProject(dir) {
         anim = true;
         Container.style.height = container.offsetHeight+"px";
         Container.style.width = container.offsetWidth+"px";
+        
         container.parentNode.appendChild(Container);
+        
         const img2 = Container.getElementsByClassName('imagesProjet')[0];
         const titre2 = Container.getElementsByClassName('titre')[0];
         const desc2 = Container.getElementsByClassName('desc')[0];
+        
         try {
             img2.src = projets[i_projets]['img'][0];
         } catch (e) {};
         titre2.textContent = projets[i_projets]['titre'];
         desc2.textContent = projets[i_projets]['desc'];
+
+        Container.style.transition = "none";
         container.style.transition = '1s ease-in-out';
+        
         if (dir == 'right'){
             Container.style.transform = "translateX(150%) scale(0.7)";
         } else {
             Container.style.transform = "translateX(-150%) scale(0.7)";
         };
-        Container.style.filter = "contrast(0.7)"
-        Container.style.transition = '1s ease-in-out';
+        
+        Container.style.filter = "contrast(0.7)";
 
         requestAnimationFrame(() => {
-            if (dir == 'right'){
-                container.style.transform = "translateX(-150%) scale(0.7)";
-                container.style.filter = "contrast(0.7)"
-                Container.style.transform = "translateX(0)";
-                Container.style.filter = "contrast(1)"
-            } else {
-                container.style.transform = "translateX(150%) scale(0.7)";
-                container.style.filter = "contrast(0.7)"
-                Container.style.transform = "translateX(0)";
-                Container.style.filter = "contrast(1)"
-            };
+            void Container.offsetWidth;
+            
+            requestAnimationFrame(() => {
+                Container.style.transition = '1s ease-in-out';
+                
+                if (dir == 'right'){
+                    container.style.transform = "translateX(-150%) scale(0.7)";
+                    container.style.filter = "contrast(0.7)"
+                    Container.style.transform = "translateX(0)";
+                    Container.style.filter = "contrast(1)"
+                } else {
+                    container.style.transform = "translateX(150%) scale(0.7)";
+                    container.style.filter = "contrast(0.7)"
+                    Container.style.transform = "translateX(0)";
+                    Container.style.filter = "contrast(1)"
+                };
         });
 
         setTimeout(() => {
