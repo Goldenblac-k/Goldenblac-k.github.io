@@ -172,7 +172,7 @@ function swipProject(dir) {
                     Container.style.transform = "translateX(0)";
                     Container.style.filter = "contrast(1)"
                 };
-            };
+            });
         });
 
         setTimeout(() => {
